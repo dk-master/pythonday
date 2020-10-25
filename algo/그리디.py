@@ -61,13 +61,39 @@
 
 # print(result)
 
-n,k = map(int, input().split())
-answer = 0
+# n,k = map(int, input().split())
+# answer = 0
 
-while n > 1 :
-    answer += 1
-    if(n % k == 0 ) : n = n // k
+# while n > 1 :
+#     answer += 1
+#     if(n % k == 0 ) : n = n // k
 
-    else: n -= 1
+#     else: n -= 1
 
-print(answer)
+# print(answer)
+
+#모험가 길드
+
+# n = int(input())
+
+# data = list(map(int,input().split()))
+
+# data.sort()
+
+# temp = []
+# count = 0
+
+# for i in range (n) :
+#     temp.append(data[i])
+#     if (len(temp) >= data[i] ) :
+#         count += 1
+#         temp = []
+
+# print(count)
+
+
+
+#문자열 뒤집기
+s = input()
+data = list(s)
+

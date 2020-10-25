@@ -40,19 +40,63 @@
 
 
 
-def solution(n):
-    answer = 0
-    nam = []
-    mok = 0
-    while True:
-        nam.append(n%3)
-        mok = n // 3
-        if(mok <= 0) :
-            break
-        n = mok
-    print(nam)
-    for i in range(len(nam)) :
-        answer=answer+(nam[-(i+1)] * pow(3,i))
-    return answer
+# def solution(n):
+#     answer = 0
+#     nam = []
+#     mok = 0
+#     while True:
+#         nam.append(n%3)
+#         mok = n // 3
+#         if(mok <= 0) :
+#             break
+#         n = mok
+#     print(nam)
+#     for i in range(len(nam)) :
+#         answer=answer+(nam[-(i+1)] * pow(3,i))
+#     return answer
 
-print(solution(125))
+# print(solution(125))
+
+
+# from itertools import combinations
+
+# def solution(numbers):
+#     answer = []
+#     for a,b in combinations(numbers,2) :
+#         temp = a + b
+#         if temp not in answer:
+#             print(temp)
+#             answer.append(temp)
+
+#     return answer
+        
+    
+
+# print(sorted(solution([2,1,3,4,1])))
+
+
+#크레인 인형뽑기 게임
+board = [[0,0,0,0,0],[0,0,1,0,3],[0,2,5,0,1],[4,2,4,4,2],[3,5,1,3,1]]
+moves = [1,5,3,5,1,2,1,4]	
+def solution(board, moves):
+    answer = 0
+    stack = []
+    for i in range(len(moves)) :
+        
+        for j in range(len(board)) :
+            
+            if(board[j][moves[i]-1] != 0) :
+                if(len(stack) != 0 and (stack[len(stack)-1] == board[j][moves[i]-1])) :
+                    print("팝 전",stack)
+                    print("들어가려던 숫자 : ",board[j][moves[i]-1])
+                    stack.pop()
+                    board[j][moves[i]-1] = 0
+                    answer += 2
+                    print("팝 후",stack)
+                    break
+                stack.append(board[j][moves[i]-1])
+                board[j][moves[i]-1] = 0    
+                print(board)
+                break
+    return answer      
+print(solution(board,moves))

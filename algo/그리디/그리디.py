@@ -72,28 +72,25 @@
 
 # print(answer)
 
-#모험가 길드
-
-# n = int(input())
-
-# data = list(map(int,input().split()))
-
-# data.sort()
-
-# temp = []
-# count = 0
-
-# for i in range (n) :
-#     temp.append(data[i])
-#     if (len(temp) >= data[i] ) :
-#         count += 1
-#         temp = []
-
-# print(count)
 
 
 
-#문자열 뒤집기
-s = input()
-data = list(s)
 
+#만들수 없는 금액 중 최솟값 찾기
+
+
+from itertools import combinations
+
+n = int(input())
+
+data = list(map(int,input().split()))
+def solution(numbers):
+    answer = []
+    for a,b in combinations(numbers,2) :
+        temp = a + b
+        if temp not in answer:
+            print(temp)
+            answer.append(temp)
+
+    return answer
+        

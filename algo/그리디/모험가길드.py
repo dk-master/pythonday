@@ -4,7 +4,7 @@ n = int(input())
 data = list(map(int,input().split()))
 
 data.sort()
-
+print(sorted(data))
 temp = []
 count = 0
 

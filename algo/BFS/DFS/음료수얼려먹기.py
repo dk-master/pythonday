@@ -2,6 +2,8 @@ n,m = map(int, input().split())
 
 # 2차원 리스트의 앱 정보 입력받기
 graph = []
+for i in range(n) :
+    graph.append(list(map(int,input())))
 
 # DFS로 특정한 노드를 방문한 뒤에 연결된 모든 노드들도 방문
 def dfs(x,y) :
@@ -28,4 +30,4 @@ for i in range(n) :
     for j in range(m) :
         # 현재 위치에서 DFS 수행
         if dfs(i,j) == True:
-            result += 1
+            result +=

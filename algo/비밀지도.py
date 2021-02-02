@@ -9,10 +9,7 @@ def solution(n, arr1, arr2):
             arr2[i] = '0' *(n-len(arr2[i])) + arr2[i]
         temp = ''
         for j in range (len(arr1[i])):
-            print(arr1[i])
-            print(arr2[j])
-            print(arr1[i][j] == '1' or arr2[i][j] == '1')
-            if(arr1[i][j] == '1' or arr2[i][j] == '1' ):
+            if(int(arr1[i][j]) or int(arr2[i][j]) == True):
                 temp += '#'
             else :
                 temp += ' '

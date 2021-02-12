@@ -26,8 +26,10 @@ def dfs(x,y) :
 
 # 모든 노드(위치)에 대하여 음료수 채우기
 result = 0
+print(graph)
 for i in range(n) :
     for j in range(m) :
         # 현재 위치에서 DFS 수행
         if dfs(i,j) == True:
-            result +=
+            result += 1
+print(result)

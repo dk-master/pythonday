@@ -31,7 +31,7 @@ def solution(numbers):
     temp = list(numbers)
     for i in range(1,len(numbers)+1) :
         numL = list(map(''.join,permutations(temp,i))
-        for j in list(set(numL)):
+        for j in list(set(numL)) :
             if check(int(j)) :
                 answer += 1
                     

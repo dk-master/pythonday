@@ -1,38 +1,35 @@
-def dfs(x,y) :
-    global W
-    global B
+from collections from deque
+
+def bfs(x,y) :
+    count = 1
+    queue = deque((x,y))
     dx = [-1,1,0,0]
-    dy = [0,0,-1,1]
-    if(x <= -1 or x>=m or y<-1 or y>=n):
-        return False
-    for i in range(4) :
-        nx = x + dx[i]
-        ny = y + dy[i]
-        if(graph[nx][ny] == 'W') :
-            graph[nx][ny] = 0
-            W += 1
-        if(graph[nx][ny] == 'B') :
-            graph[nx][ny] = 0
-            B += 1
-        dfs(nx,ny)
-    return True 
-        
+    dy = [0,0,1,1]
+    while queue :
+        x, y = queue.popleft()
+        for i in range(4) :
+            nx = x + dx[i]
+            ny = y + dy[i]
+            if nx <= -1 or nx >= m or ny <= -1 or ny >= n :
+                continue
+            if(graph[nx][ny] == 'W') :
+                graph[nx][ny] = 0
+                count += 1
+                queue.append((nx,ny))
+            if(graph[nx][ny] == 'B') :
+                graph[nx][ny] = 0
+                count += 1
+                queue.append((nx,ny))
+    return count
 
-
-n , m = map(int, input().split())
-first = 0
-last = 0
+n,m = map(int, input().split())
 graph = []
-for _ in range(m) :
-    graph.append(list(map(str,input())))
-
+teamW = 0
+teamB = 0
 for i in range(m) :
-    for j in range(n) :
-        if(dfs(i,j)==True) :
-            first = W*W
-            W = 0
-            last = B*B
-            B = 0
+    graph.append(list(map(str,input().split())))  
 
-print(first,last)
-            
+for i in range(m)
+    for j in range(n) :
+        if(graph[i][j] == 'W') :
+            bfs(i,j)

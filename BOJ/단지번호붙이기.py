@@ -12,19 +12,19 @@ def bfs(x,y) :
     dy = [0, 0, 1, -1]  
     queue = deque()
     count = 1
-    graph[x][y] =0 # 처음 방문처리...
-    queue.append((x,y))
+    graph[x][y] =0 # 처음 1로 방문처리
+    queue.append((x,y)) # 큐에 넣고 처음엔 들어가있는 상태여야하니까~
     while queue :
-        x,y = queue.popleft()   
+        x,y = queue.popleft()   # 그리고 꺼낸다.방문처리해준노드의 자식노드들 다 방문 (상하좌우)
         for i in range(4) :
             nx = x + dx[i]
             ny = y + dy[i]
             if nx <= -1 or nx >= n or ny <=-1 or ny >=n :
                 continue
             if(graph[nx][ny] == 1) :
-                count +=1
-                graph[nx][ny] = 0
-                queue.append((nx,ny))
+                count +=1 `# 단지갯수 세기
+                graph[nx][ny] = 0 # 방문처리 
+                queue.append((nx,ny)) # 상하좌우에 해당하는 노드를 큐에 삽입 
     return count
 
         

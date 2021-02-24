@@ -9,7 +9,7 @@ def fibo(x) :
     return d[x]
 print(fibo(99))
 # topDown
-
+d[1]
 d[1] = 1
 d[2] = 1
 n = 99

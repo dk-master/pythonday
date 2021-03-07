@@ -17,6 +17,8 @@ while True:
             answer +=1
             min = graph1[j][1]
 
+# 이것은 커밋용
+
     i += 1
     result.append(answer)
 
